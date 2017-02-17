@@ -20,12 +20,6 @@ show_3 = Show.create(title: 'The Godfather',  description: "In 1945, at his daug
 
 show_4 = Show.create(title: 'Sunset Boulevard',  description: "At a Sunset Boulevard mansion, the body of Joe Gillis floats in the swimming pool. In a flashback, Joe relates the events leading to his death.", image_url:'http://www.filmsite.org/posters/suns.jpg', runtime:115)
 
+showtime_1 = Showtime.create(auditorium_id: auditorium_1.id, show_id: show_1.id, showtime: 200)
 
-
-
-
-
-
-
-
-
+showtime_2 = Showtime.create(auditorium_id: auditorium_2.id, show_id: show_2.id, showtime: 1200)
