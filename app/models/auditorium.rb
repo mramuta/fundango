@@ -1,3 +1,3 @@
 class Auditorium < ApplicationRecord
-	validates :capaicty, presence: true
+	validates :capacity, presence: true
 end
