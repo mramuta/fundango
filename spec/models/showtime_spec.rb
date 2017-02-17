@@ -10,7 +10,7 @@ describe Showtime do
       expect(showtime.invalid?).to be_truthy
       showtime.auditorium_id = auditorium.id
       showtime.show_id = show.id
-      showtime.showtime = Time.now
+      showtime.min_after_midnight = 1200
       expect(showtime.invalid?).to be_falsey
     end
   end
