@@ -1,0 +1,24 @@
+<% @shows.each do |show|%>
+	<div class="panel panel-default">
+  	<div class="panel-body">
+			  <div class="media">
+				  <div class="media-left">
+				    <a href="#">
+				      <img class="media-object change-img thumbnail image-responsive"  src=<%=show.image_url%>>
+				    </a>
+				  </div>
+				  <div class="media-body">
+				    <h4 class="media-heading"><%=show.title%></h4>
+				   	<p><%=show.description%></p>
+				   	<div>
+				   		Showtimes today:  
+				   		<% show.showtimes.where("min_after_midnight > ?", Time.now.seconds_since_midnight / 60).order(:min_after_midnight).each do |showtime|%>
+				   			<%=showtime.min_to_time()%>
+				   		<%end%>
+				   	</div>
+				  </div>
+				</div>
+			</div>
+	  </div>
+	</div>
+<%end%>
