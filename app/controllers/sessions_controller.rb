@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_action :require_login, only: [:new,:create]w
+  skip_before_action :require_login, only: [:new,:create]
   def create
     @admin = Admin.find_by(username: params[:sessions][:username])
     if @admin && @admin.authenticate(params[:sessions][:password])
