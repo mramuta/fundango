@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
     @show = Show.find(params[:show_id])
     @order = Order.new(order_params)
     if @order.save
+      UserMailer.confirm(@order).deliver_later
       redirect_to root_path 
     else
       @errors = @order.errors.full_messages
