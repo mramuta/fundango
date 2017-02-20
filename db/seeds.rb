@@ -28,3 +28,4 @@ showtime_1 = Showtime.create(auditorium_id: auditorium_1.id, show_id: show_1.id,
 showtime_2 = Showtime.create(auditorium_id: auditorium_2.id, show_id: show_2.id, min_after_midnight: 1200)
 showtime_3 = Showtime.create(auditorium_id: auditorium_3.id, show_id: show_3.id, min_after_midnight: 1330)
 showtime_4 = Showtime.create(auditorium_id: auditorium_4.id, show_id: show_4.id, min_after_midnight: 1245)
+admin = Admin.create(username: 'admin',password:'password')
