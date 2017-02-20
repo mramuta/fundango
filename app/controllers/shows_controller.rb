@@ -1,8 +1,19 @@
 class ShowsController < ApplicationController
+	skip_before_action :require_login, only: :index
 	def index
 		@shows = Show.all
-		# @showtimes = Show.all.showtimes.where("showtime > ?", Time.now.seconds_since_midnight / 60)
-		# p @showtimes
-		p @shows[1].showtimes[0].min_to_time
 	end
+
+  def new
+    @show = Show.new
+  end
+
+  def create
+    if @show.save
+      redirect_to root_path 
+    else
+      @errors = @show.errors.full_messages
+      render "new"
+    end
+  end
 end
