@@ -12,8 +12,8 @@
 				   	<p><%=show.description%></p>
 				   	<div>
 				   		Showtimes today:  
-				   		<% show.showtimes.where("min_after_midnight > ?", Time.now.seconds_since_midnight / 60).order(:min_after_midnight).each do |showtime|%>
-				   			<%=showtime.min_to_time()%>
+				   		<%show.get_times().each do |showtime|%>
+				   			<%=showtime%>
 				   		<%end%>
 				   	</div>
 				  </div>
