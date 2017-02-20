@@ -1,0 +1,10 @@
+<%= render "errors" %>
+<%= form_for @order, url: {action: "create"} do |f| %>
+	<p><%= f.label(:name, "full name") %>
+  <%= f.text_field :name %></p>
+  <p><%= f.label(:email, "email") %>
+  <%= f.email_field :email %></p>
+  <p><%= f.label(:showtime_id, "Select showtime") %>
+  <%= f.select(:showtime_id, @show.select_options) %></p>
+  <%= f.submit "Purchase" %>
+<% end %>
