@@ -1,0 +1,6 @@
+<%= render "errors" %>
+<%= form_for @auditorium, url: {action: "create"} do |f| %>
+	<p><%= f.label(:capacity, "Capacity") %>
+  <%= f.text_field :capacity %></p>
+  <%= f.submit "Add Auditorium" %>
+<% end %>

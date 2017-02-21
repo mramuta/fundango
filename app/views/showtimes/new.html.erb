@@ -1,0 +1,10 @@
+<%= render "errors" %>
+<%= form_for @showtime, url: {action: "create"} do |f| %>
+	<p><%= f.label(:show_id, "Select show") %>
+  <%= f.select(:show_id, @show_options) %></p>
+  <p><%= f.label(:auditorium_id, "Select auditorium") %>
+  <%= f.select(:auditorium_id, @auditorium_options) %></p>
+  <p><%= f.label(:min_after_midnight, "Time (min after midnight)") %>
+  <%= f.text_field :min_after_midnight %></p>
+  <%= f.submit "Add Showtime" %>
+<% end %>
