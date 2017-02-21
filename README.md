@@ -4,7 +4,7 @@ This is a Rails 5 website that would allow you to buy movie tickets.
 
 ![Database Schema](schema.png)
 
-This page is hosted on heroku at [fundango.herokuapp.com](fundango.herokuapp.com)
+This page is hosted on heroku at [fundango.herokuapp.com](https://fundango.herokuapp.com)
 
 The only pages that a customer can visit are / and /showtimes/showtime_id/orders/new.
 
