@@ -1,0 +1,12 @@
+<%= render "errors" %>
+<%= form_for @show, url: {action: "create"} do |f| %>
+	<p><%= f.label(:title, "Title") %>
+  <%= f.text_field :title %></p>
+  <p><%= f.label(:description, "Description") %>
+  <%= f.text_field :description %></p>
+  <p><%= f.label(:image_url, "Image URL") %>
+  <%= f.text_field :image_url %></p>
+  <p><%= f.label(:runtime, "Runtime(min)") %>
+  <%= f.text_field :runtime %></p>
+  <%= f.submit "Add Show" %>
+<% end %>

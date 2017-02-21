@@ -1,6 +1,13 @@
 class OrdersController < ApplicationController
 	skip_before_action :require_login, only: [:new,:create]
 
+  def index
+    @orders = Order.all
+    @order_details = Order.all.map do |order|
+        'Purchaser: ' + order.name + ' Email: ' + order.email + ' Date Purchased: ' + order.created_at.strftime("Ordered on %m/%d/%Y") + order.created_at.strftime("at %I:%M%p")  + ' Show: ' + order.showtime.show.title
+    end
+  end
+
   def new
     @show = Show.find(params[:show_id])
     @order = Order.new
